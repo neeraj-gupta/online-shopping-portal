@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title><%=title%></title>
+		<link href="images/favicon.png" rel="icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="clean modern and elegant corporate look eCommerce html template">
+		<meta name="author" content="">
+		<!-- CSS Part Start-->
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/flexslider.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="javascript/colorbox/colorbox.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/carousel.css" media="screen" />
+		<!-- CSS Part End-->
+		
+		<!-- JS Part Start-->
+		<script type="text/javascript" src="javascript/eBayClient.js"></script>
+		<script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="javascript/jquery.flexslider.js"></script>
+		<script type="text/javascript" src="javascript/jquery.easing-1.3.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.jcarousel.min.js"></script>
+		<script type="text/javascript" src="javascript/colorbox/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="javascript/tabs.js"></script>
+		<script type="text/javascript" src="javascript/cloud_zoom.js"></script>
+		<script type="text/javascript" src="javascript/jquery.dcjqaccordion.js"></script>
+		<script type="text/javascript" src="javascript/custom.js"></script>
+		<script type="text/javascript" src="javascript/html5.js"></script>
+		<!-- JS Part End-->
+		<!-- Google Fonts (Droid Sans) Start -->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans&amp;v1' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=&amp;v1' rel='stylesheet' type='text/css'>
+		<!-- Google Fonts (Droid Sans) End -->
+	</head>
+	<body>
+		<div class="wrapper-box">
+		  <div class="main-wrapper">
+		    <!--Header Part Start-->
+		    <header id="header">
+		      <div class="htop">
+		        <div id="language"> <span><%= userName %><b></b></span>
+		          <ul>
+		            <li><a title="My Account" href="fetchPersonDetails?isUpdate=no">My Account</a></li>
+		            <li><a title="logout" href="logout">Sign Out</a></li>
+		          </ul>
+		        </div>
+		        <div id="sell"> <span><a href="sell">Sell</a><b></b></span></div>
+		        <div class="links"> <a href="fetchPersonDetails?isUpdate=no">My eBay</a><a href="displayPayment">Checkout</a> </div>
+		      </div>
+		      <section class="hsecond">
+		        <div id="logo"><a href="home"><img src="images/ebayLogo.png" title="eBay" alt="eBay" /></a></div>
+		        <div class="clear"></div>
+		      </section>
+		    </header>
+		    <!--Header Part End-->
+		    <div id="container">
+		      <!--Middle Part Start-->
+		      <div id="content">
+		        <h1>Payment Details</h1>
+		        <form enctype="multipart/form-data" method="post" action="/paymentDetails" onsubmit="return validate()">
+		          <h2>Your Payment Details</h2>
+		          <div class="content"></div>
+		                <tr>
+		                  <td><span class="required" id="acc_no">*</span>Account Number:</td>
+		                  <td><input class="large-field" type="text" value="" name="payment_accno" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Payment Type:</td>
+		                  <td>
+		                  	<select name="payment_type">
+		                      <option value=""> --- Please Select --- </option>
+		                      <option value="DC">Debit Card</option>
+		                      <option value="CC">Credit Card</option>
+		                    </select>
+		                   </td>
+		                </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		          <h2>Your Password</h2>
+		          <div class="content">
+		            <table class="form">
+		              <tbody>
+		                <tr>
+		                  <td><span class="required">*</span> Password:</td>
+		                  <td><input class="large-field" type="password" value="" name="password" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Password Confirm:</td>
+		                  <td><input class="large-field" type="password" value="" name="confirm" required></td>
+		                </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		          <div class="buttons">
+		            <div class="left">
+		              <p>
+		                <input type="checkbox" value="1" name="agree">
+		                &nbsp; I have read and agree to the <a alt="Privacy Policy" href="#" class="colorbox cboxElement"><b>Privacy Policy</b></a> </p>
+		              <input type="submit" class="button" value="Confirm Details">
+		            </div>
+		          </div>
+		        </form>
+		      </div>
+		      <!--Middle Part End-->
+		      
+		    </div>
+		  </div>
+		</div>
+	</body>
+</html>

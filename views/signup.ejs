@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title><%= title %></title>
+		<link href="images/favicon.png" rel="icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="clean modern and elegant corporate look eCommerce html template">
+		<meta name="author" content="">
+		<!-- CSS Part Start-->
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/flexslider.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="javascript/colorbox/colorbox.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/carousel.css" media="screen" />
+		<!-- CSS Part End-->
+		
+		<!-- JS Part Start-->
+		<script type="text/javascript" src="javascript/eBayClient.js"></script>
+		<script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="javascript/jquery.flexslider.js"></script>
+		<script type="text/javascript" src="javascript/jquery.easing-1.3.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.jcarousel.min.js"></script>
+		<script type="text/javascript" src="javascript/colorbox/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="javascript/tabs.js"></script>
+		<script type="text/javascript" src="javascript/cloud_zoom.js"></script>
+		<script type="text/javascript" src="javascript/jquery.dcjqaccordion.js"></script>
+		<script type="text/javascript" src="javascript/custom.js"></script>
+		<script type="text/javascript" src="javascript/html5.js"></script>
+		<!-- JS Part End-->
+		<!-- Google Fonts (Droid Sans) Start -->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans&amp;v1' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=&amp;v1' rel='stylesheet' type='text/css'>
+		<!-- Google Fonts (Droid Sans) End -->
+	</head>
+	<body>
+		<div class="wrapper-box">
+		  <div class="main-wrapper">
+		    <!--Header Part Start-->
+		    <header id="header">
+		      <div class="htop">
+		        <div class="links"> <a href="login">Login</a> <a href="signup">Register</a> </div>
+		      </div>
+		      <section class="hsecond">
+		        <div id="logo"><a href=""><img src="images/ebaylogo.png" title="eBay" alt="eBay" /></a></div>
+		        <div class="clear"></div>
+		      </section>
+		    </header>
+		    <!--Header Part End-->
+		    <div id="container">
+		      <!--Left Part-->
+		      <div id="column-left">
+		        <!--Account Links Start-->
+		        <div class="box">
+		          <div class="box-heading">Account</div>
+		          <div class="box-content">
+		            <ul class="list-item">
+		              <li><a href="login">Login</a></li>
+		              <li><a href="signup">Register</a></li>
+		            </ul>
+		          </div>
+		        </div>
+		        <!--Account Links End-->
+		      </div>
+		      <!--Left End-->
+		      <!--Middle Part Start-->
+		      <div id="content">
+		        <h1>Register Account</h1>
+		        <form enctype="multipart/form-data" method="post" action="/signup" onsubmit="return validate();">
+		          <h2>Your Personal Details</h2>
+		          <div class="content">
+		            <table class="form">
+		              <tbody>
+		                <tr>
+		                  <td><span class="required">*</span> First Name:</td>
+		                  <td><input class="large-field" type="text" value="" name="firstname" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Last Name:</td>
+		                  <td><input class="large-field" type="text" value="" name="lastname" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> E-Mail:</td>
+		                  <td><input class="large-field" type="text" value="" name="email" required></td>
+		                </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		          <h2>Your Address</h2>
+		          <div class="content">
+		            <table class="form">
+		              <tbody>
+		                <tr>
+		                  <td><span class="required">*</span> Address :</td>
+		                  <td><input class="large-field" type="text" value="" name="address" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> City:</td>
+		                  <td><input class="large-field" type="text" value="" name="city" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required" id="postcode-required">*</span> Post Code:</td>
+		                  <td><input class="large-field" type="text" value="" name="zipcode" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required" id="state-required">*</span> State:</td>
+		                  <td><input class="large-field" type="text" value="" name="state" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Country:</td>
+		                  <td><select name="country_id">
+		                      <option value=""> --- Please Select --- </option>
+		                      <option value="Argentina">Argentina</option>
+		                      <option value="Armenia">Armenia</option>
+		                      <option value="Australia">Australia</option>
+		                      <option value="Austria">Austria</option>
+		                      <option value="Botswana">Botswana</option>
+		                      <option value="Brazil">Brazil</option>
+		                      <option value="Congo">Congo</option>
+		                      <option value="Croatia">Croatia</option>
+		                      <option value="Cuba">Cuba</option>
+		                      <option value="Curacao">Curacao</option>
+		                      <option value="Cyprus">Cyprus</option>
+		                      <option value="Greenland">Greenland</option>
+		                      <option value="Grenada">Grenada</option>
+		                      <option value="Honduras">Honduras</option>
+		                      <option value="Hungary">Hungary</option>
+		                      <option value="Iceland">Iceland</option>
+		                      <option selected="selected" value="India">India</option>
+		                      <option value="Iraq">Iraq</option>
+		                      <option value="Ireland">Ireland</option>
+		                      <option value="Israel">Israel</option>
+		                      <option value="Italy">Italy</option>
+		                      <option value="Jamaica">Jamaica</option>
+		                      <option value="Japan">Japan</option>
+		                      <option value="Norway">Norway</option>
+		                      <option value="Paraguay">Paraguay</option>
+		                      <option value="Peru">Peru</option>
+		                      <option value="Poland">Poland</option>
+		                      <option value="Portugal">Portugal</option>
+		                      <option value="Romania">Romania</option>
+		                      <option value="Russian">Russian Federation</option>
+		                      <option value="Rwanda">Rwanda</option>
+		                      <option value="Singapore">Singapore</option>
+		                      <option value="189">Slovak Republic</option>
+		                      <option value="Slovenia">Slovenia</option>
+		                      <option value="Spain">Spain</option>
+		                      <option value="Sudan">Sudan</option>
+		                      <option value="Sweden">Sweden</option>
+		                      <option value="Switzerland">Switzerland</option>
+		                      <option value="Taiwan">Taiwan</option>
+		                      <option value="Thailand">Thailand</option>
+		                      <option value="Tunisia">Tunisia</option>
+		                      <option value="Turkey">Turkey</option>
+		                      <option value="Uganda">Uganda</option>
+		                      <option value="Ukraine">Ukraine</option>
+		                      <option value="United Arab Emirates">United Arab Emirates</option>
+		                      <option value="United Kingdom">United Kingdom</option>
+		                      <option value="United States">United States</option>
+		                      <option value="Uruguay">Uruguay</option>
+		                      <option value="Uzbekistan">Uzbekistan</option>
+		                      <option value="Virgin Islands (U.S.)">Virgin Islands (U.S.)</option>
+		                      <option value="Wallis and Futuna Islands">Wallis and Futuna Islands</option>
+		                      <option value="Western Sahara">Western Sahara</option>
+		                      <option value="Yemen">Yemen</option>
+		                      <option value="Zambia">Zambia</option>
+		                      <option value="Zimbabwe">Zimbabwe</option>
+		                    </select></td>
+		                </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		          <h2>Your Password</h2>
+		          <div class="content">
+		            <table class="form">
+		              <tbody>
+		                <tr>
+		                  <td><span class="required">*</span> Password:</td>
+		                  <td><input class="large-field" type="password" value="" name="password" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Password Confirm:</td>
+		                  <td><input class="large-field" type="password" value="" name="confirm" required></td>
+		                </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		          <div class="buttons">
+		            <div class="left">
+		              <input type="submit" class="button" value="Continue">
+		            </div>
+		          </div>
+		        </form>
+		      </div>
+		      <!--Middle Part End-->
+		      <div class="clear"><%= error %></div>
+		    </div>
+		  </div>
+		</div>
+	</body>
+</html>

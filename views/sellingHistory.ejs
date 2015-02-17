@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title><%= title %></title>
+		<link href="image/favicon.png" rel="icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="clean modern and elegant corporate look eCommerce html template">
+		<meta name="author" content="">
+		<!-- CSS Part Start-->
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/flexslider.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="js/colorbox/colorbox.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/carousel.css" media="screen" />
+		<!-- CSS Part End-->
+		<!-- JS Part Start-->
+		<script type="text/javascript" src="javascript/eBayClient.js"></script>
+		<script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="javascript/jquery.flexslider.js"></script>
+		<script type="text/javascript" src="javascript/jquery.easing-1.3.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.jcarousel.min.js"></script>
+		<script type="text/javascript" src="javascript/colorbox/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="javascript/tabs.js"></script>
+		<script type="text/javascript" src="javascript/cloud_zoom.js"></script>
+		<script type="text/javascript" src="javascript/jquery.dcjqaccordion.js"></script>
+		<script type="text/javascript" src="javascript/custom.js"></script>
+		<script type="text/javascript" src="javascript/html5.js"></script>
+		<!-- JS Part End-->
+		<!-- Google Fonts (Droid Sans) Start -->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans&amp;v1' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=&amp;v1' rel='stylesheet' type='text/css'>
+		<!-- Google Fonts (Droid Sans) End -->
+	</head>
+	<body>
+		<div class="wrapper-box">
+		  <div class="main-wrapper">
+		    <!--Header Part Start-->
+		    <header id="header">
+		      <div class="htop">
+		        <div id="language"> <span><%= userName%><b></b></span>
+		          <ul>
+		            <li><a title="My Account" href="fetchPersonDetails?isUpdate=no">My Account</a></li>
+		            <li><a title="logout" href="logout">Sign Out</a></li>
+		          </ul>
+		        </div>
+		        <div id="sell"><span><a href="sell">Sell</a><b></b></span></div>
+		        <div class="links"><a href="fetchPersonDetails?isUpdate=no">My eBay</a><a href="displayPayment">Checkout</a> </div>
+		      </div>
+		      <section class="hsecond">
+		        <div id="logo"><a href="home"><img src="images/ebayLogo.png" title="eBay" alt="eBay" /></a></div>
+		        
+		        <div id="search">
+		          	<form method='get' action='searchProduct'>
+			        	<div class="button-search">
+			        		<input type='submit' id='search_btn' style="border:none;width:0px;" value=''/>
+			        	</div>
+			          	<input type="text" name="search" placeholder="Search" value="" />
+		          	</form>
+		        </div>
+		        
+		        <!--Mini Shopping Cart Start-->
+		        <section id="cart">
+		          <div class="heading">
+		            <a href="fetchfromCart"><h4><img width="32" height="32" alt="" src="images/cart-bg.png"></h4><b>Cart</b></a>
+				  </div>     
+		        </section>
+		        <!--Mini Shopping Cart End-->
+		        
+		        <div class="clear"></div>
+		      </section>
+		      
+		      <!--Top Menu(Horizontal Categories) Start-->
+		      <nav id="menu">
+		        <ul>
+		          <li class="categories_hor"><a>Categories</a>
+		            <div>
+		              <div class="column"><a href="searchProduct?category=electronics">Electronics</a>
+		                <div>
+		                  <ul>
+		                    <li><a href="searchProduct?subcategory=HeadPhones">HeadPhones</a></li>
+		                    <li><a href="searchProduct?subcategory=PCBs">PCBs</a></li>
+		                    <li><a href="searchProduct?subcategory=Security Cameras">Security Cameras</a></li>
+		                    <li><a href="searchProduct?subcategory=Lights & Reflectors">Lights & Reflectors</a></li>
+		                    <li><a href="searchProduct?subcategory=Cigarettes">Cigarettes</a></li>
+		                    <li><a href="searchProduct?subcategory=Microscopes">Microscopes</a></li>
+		                  </ul>
+		                </div>
+		              </div>
+		              <div class="column"> <a href="searchProduct?category=accesories">Accesories</a>
+		                <div>
+		                  <ul>
+		                    <li><a href="searchProduct?subcategory=Jewellery">Children's Jewellery</a></li>
+		                    <li><a href="searchProduct?subcategory=Jewellery">Men's Jewellery</a></li>
+		                    <li><a href="searchProduct?subcategory=Jewellery">Women's Jewellery</a></li>
+		                  </ul>
+		                </div>
+		              </div>
+		              <div class="column"> <a href="searchProduct?category=dress">Apparel</a>
+		                <div>
+		                  <ul>
+		                    <li><a href="searchProduct?subcategory=Tops & Blouses">Tops & Blouses</a></li>
+		                    <li><a href="searchProduct?subcategory=Kleider">Kleider</a></li>
+		                    <li><a href="searchProduct?subcategory=Jackets & Leathers">Jackets & Leathers</a></li>
+		                    <li><a href="searchProduct?subcategory=Sweaters">Sweaters</a></li>
+		                    <li><a href="searchProduct?subcategory=Skirts">Skirts</a></li>
+		                    <li><a href="searchProduct?subcategory=Medieval & Renaissance">Medieval & Renaissance</a></li>
+		                  </ul>
+		                </div>
+		              </div>
+		              <div class="column"> <a href="searchProduct?category=furniture">Furniture</a>
+		                <div>
+		                  <ul>
+		                    <li><a href="searchProduct?subcategory=Sofas, Loveseats & Chaises">Sofas, Loveseats & Chaises</a></li>
+		                    <li><a href="searchProduct?subcategory=Chairs & Seating">Chairs & Seating</a></li>
+		                    <li><a href="searchProduct?subcategory=Furniture Parts & Accessories">Furniture Parts & Accessories</a></li>
+		                    <li><a href="searchProduct?subcategory=Dollhouses">Dollhouses</a></li>
+		                    <li><a href="searchProduct?subcategory=Stylist Stations & Furniture">Stylist Stations & Furniture</a></li>
+		                    <li><a href="searchProduct?subcategory=Door Knockers">Door Knockers</a></li>
+		                  </ul>
+		                </div>
+		              </div>
+		              <div class="column"> <a href="searchProduct?category=books">Books</a>
+		                <div>
+		                  <ul>
+		                    <li><a href="searchProduct?subcategory=Cookbooks">Cookbooks</a></li>
+		                    <li><a href="searchProduct?subcategory=Textbooks, Education">Textbooks, Education</a></li>
+		                    <li><a href="searchProduct?subcategory=Cartoon Character">Cartoon Character</a></li>
+		                    <li><a href="searchProduct?subcategory=Atlases">Atlases</a></li>
+		                    <li><a href="searchProduct?subcategory=American Vehicles">American Vehicles</a></li>
+		                    <li><a href="searchProduct?subcategory=Other Children & Young Adults">Other Children & Young Adults</a></li>
+		                  </ul>
+		                </div>
+		              </div>
+		              <div class="column"> <a href="searchProduct?category=watch">Watches</a>
+		                <div>
+		                  <ul>
+		                    <li><a href="searchProduct?subcategory=Wristwatches">Wristwatches</a></li>
+		                    <li><a href="searchProduct?subcategory=Wristwatch Bands">Wristwatch Bands</a></li>
+		                    <li><a href="searchProduct?subcategory=Montres classiques">Montres classiques</a></li>
+		                    <li><a href="searchProduct?subcategory=Other">Other</a></li>
+		                  </ul>
+		                </div>
+		              </div>
+		              <div class="column"> <a href="searchProduct?category=cutlery">Kitchen</a>
+		                <div>
+		                  <ul>
+		                    <li><a href="searchProduct?subcategory=Kitchen & Steak Knives">Kitchen & Steak Knives</a></li>
+		                    <li><a href="searchProduct?subcategory=Loose Cutlery">Loose Cutlery</a></li>
+		                    <li><a href="searchProduct?subcategory=Egg Cups">Egg Cups</a></li>
+		                    <li><a href="searchProduct?subcategory=Besteck-Einzelteile">Besteck-Einzelteile</a></li>
+		                    <li><a href="searchProduct?subcategory=Slicers">Slicers</a></li>
+		                    <li><a href="searchProduct?subcategory=Cooking Utensils">Cooking Utensils</a></li>
+		                  </ul>
+		                </div>
+		              </div>
+		          </li>
+		          <li><a target="_blank" href="searchProduct?category=electronics">Electronics</a>
+		            <div>
+		              <ul>
+	               		<li><a href="searchProduct?subcategory=HeadPhones">HeadPhones</a></li>
+	                    <li><a href="searchProduct?subcategory=PCBs">PCBs</a></li>
+	                    <li><a href="searchProduct?subcategory=Security Cameras">Security Cameras</a></li>
+	                    <li><a href="searchProduct?subcategory=Lights & Reflectors">Lights & Reflectors</a></li>
+	                    <li><a href="searchProduct?subcategory=Cigarettes">Cigarettes</a></li>
+	                    <li><a href="searchProduct?subcategory=Microscopes">Microscopes</a></li>
+		              </ul>
+		            </div>
+		          </li>
+		          <li><a target="_blank" href="searchProduct?category=accesories">Accesories</a>
+		            <div>
+		              <ul>
+		                <li><a href="searchProduct?subcategory=Jewellery">Children's Jewellery</a></li>
+	                    <li><a href="searchProduct?subcategory=Jewellery">Men's Jewellery</a></li>
+	                    <li><a href="searchProduct?subcategory=Jewellery">Women's Jewellery</a></li>
+		              </ul>
+		            </div>
+		          </li>
+		          <li><a target="_blank" href="searchProduct?category=dress">Apparel</a>
+		            <div>
+		              <ul>
+		                <li><a href="searchProduct?subcategory=Tops & Blouses">Tops & Blouses</a></li>
+	                    <li><a href="searchProduct?subcategory=Kleider">Kleider</a></li>
+	                    <li><a href="searchProduct?subcategory=Jackets & Leathers">Jackets & Leathers</a></li>
+	                    <li><a href="searchProduct?subcategory=Sweaters">Sweaters</a></li>
+	                    <li><a href="searchProduct?subcategory=Skirts">Skirts</a></li>
+	                    <li><a href="searchProduct?subcategory=Medieval & Renaissance">Medieval & Renaissance</a></li>
+		              </ul>
+		            </div>
+		          </li>
+		          <li><a target="_blank" href="searchProduct?category=furniture">Furniture</a>
+		            <div>
+		              <ul>
+		                <li><a href="searchProduct?subcategory=Sofas, Loveseats & Chaises">Sofas, Loveseats & Chaises</a></li>
+	                    <li><a href="searchProduct?subcategory=Chairs & Seating">Chairs & Seating</a></li>
+	                    <li><a href="searchProduct?subcategory=Furniture Parts & Accessories">Furniture Parts & Accessories</a></li>
+	                    <li><a href="searchProduct?subcategory=Dollhouses">Dollhouses</a></li>
+	                    <li><a href="searchProduct?subcategory=Stylist Stations & Furniture">Stylist Stations & Furniture</a></li>
+	                    <li><a href="searchProduct?subcategory=Door Knockers">Door Knockers</a></li>
+		              </ul>
+		            </div>
+		          </li>
+		          <li><a href="searchProduct?category=books">Books</a>
+		            <div>
+		              <ul>
+		                <li><a href="searchProduct?subcategory=Cookbooks">Cookbooks</a></li>
+	                    <li><a href="searchProduct?subcategory=Textbooks, Education">Textbooks, Education</a></li>
+	                    <li><a href="searchProduct?subcategory=Cartoon Character">Cartoon Character</a></li>
+	                    <li><a href="searchProduct?subcategory=Atlases">Atlases</a></li>
+	                    <li><a href="searchProduct?subcategory=American Vehicles">American Vehicles</a></li>
+	                    <li><a href="searchProduct?subcategory=Other Children & Young Adults">Other Children & Young Adults</a></li>
+		              </ul>
+		            </div>
+		          </li>
+		          <li><a href="searchProduct?category=watch">Watches</a>
+		            <div>
+		              <ul>
+		                <li><a href="searchProduct?subcategory=Wristwatches">Wristwatches</a></li>
+	                    <li><a href="searchProduct?subcategory=Wristwatch Bands">Wristwatch Bands</a></li>
+	                    <li><a href="searchProduct?subcategory=Montres classiques">Montres classiques</a></li>
+	                    <li><a href="searchProduct?subcategory=Other">Other</a></li>
+		              </ul>
+		            </div>
+		          </li>
+		          <li><a href="searchProduct?category=cutlery">Kitchen</a>
+		            <div>
+		              <ul>
+		                <li><a href="searchProduct?subcategory=Kitchen & Steak Knives">Kitchen & Steak Knives</a></li>
+	                    <li><a href="searchProduct?subcategory=Loose Cutlery">Loose Cutlery</a></li>
+	                    <li><a href="searchProduct?subcategory=Egg Cups">Egg Cups</a></li>
+	                    <li><a href="searchProduct?subcategory=Besteck-Einzelteile">Besteck-Einzelteile</a></li>
+	                    <li><a href="searchProduct?subcategory=Slicers">Slicers</a></li>
+	                    <li><a href="searchProduct?subcategory=Cooking Utensils">Cooking Utensils</a></li>
+		              </ul>
+		            </div>
+		          </li>
+		        </ul>
+		      </nav>
+		      <!--Top Menu(Horizontal Categories) End-->
+		    </header>
+		    <!--Header Part End-->
+		    
+			<div id="container">
+		      <div id="column-left">
+		        <!--Banner Start-->
+		        <div class="banner">
+		          <div><a href=""><img src="images/ProfileIcon.jpg" alt="banner" title="banner" /></a></div>
+		          <div class="name"><a href="">Name: <%=firstName%> <%=lastName%></a></div>
+		          <div class="name"><a href="">Address: <%=address%></a></div>
+		          <div class="name"><a href="">City: <%=city%></a></div>
+		          <div class="name"><a href="">State: <%=state%></a></div>
+		          <div class="name"><a href="">Country: <%=country%></a></div>
+		          <div class="name"><a href="">Zip code: <%=zipcode%></a></div>
+		        </div>
+		        <!--Banner End-->
+		      </div>
+		      <!--Middle Part Start-->
+		      <div id="content">
+		        <h2>
+		        	<%=firstName%> <%=lastName%>
+		        </h2>
+		        <div class="product-filter">
+		          <div class="links"> 
+		        		<a href="fetchPersonDetails?isUpdate=yes">Update Account</a>
+			         	<a href="biddingHistory">Bidding History</a>
+			         	<a href="buyingHistory">Buying History</a>
+		        		<a href="sellingHistory">Selling History</a>
+		          </div>
+		        </div>
+		        <!--Product Grid Start-->
+		        <div class="product-grid">
+		       		<% if(!result.length==0 && error==""){%>
+		        			<% result.forEach(function(resp){ %>
+		            		 	<div>
+								    <div class="image"><a href=""><img src="images/product/apple_cinema_30-162x162.jpg" title="Apple Cinema 30&quot;" alt="Apple Cinema 30&quot;" /></a></div>
+							    	<div class="name"><a href="">ProductTitle: <%= resp.product_title%></a></div>
+							    	<div class="description">Category: <%= resp.category%></div>
+							    	<div class="price"> <span class="price-new">$<%= resp.instant_sellingprice %></span> <br />
+							       	</div>
+							  	</div>
+		            		<% }) %>
+		        		<% } else {%>
+		        		<div>
+		        			<div class="name">
+		        				<%=error%>
+		        			</div>
+		        		</div>
+		        		<% } %>
+		        </div>
+		        <!--Product Grid End-->
+		      </div>
+		      <!--Middle Part End-->
+		      <div class="clear"></div>
+		    </div>
+		  </div>
+		  <!--Footer Part Start-->
+		  <footer id="footer">
+		    <div class="fpart-inner">
+		      <div class="column">
+		        <h3>Information</h3>
+		        <ul>
+		          <li><a href="about-us.html">About Us</a></li>
+		          <li><a href="about-us.html">Delivery Information</a></li>
+		          <li><a href="about-us.html">Privacy Policy</a></li>
+		          <li><a href="elements.html">Elements</a></li>
+		        </ul>
+		      </div>
+		      <div class="column">
+		        <h3>Customer Service</h3>
+		        <ul>
+		          <li><a href="contact-us.html">Contact Us</a></li>
+		          <li><a href="#">Returns</a></li>
+		          <li><a href="sitemap.html">Site Map</a></li>
+		        </ul>
+		      </div>
+		      <div class="column">
+		        <h3>Extras</h3>
+		        <ul>
+		          <li><a href="#">Brands</a></li>
+		          <li><a href="#">Gift Vouchers</a></li>
+		          <li><a href="#">Affiliates</a></li>
+		          <li><a href="#">Specials</a></li>
+		        </ul>
+		      </div>
+		      <div class="column">
+		        <h3>My Account</h3>
+		        <ul>
+		          <li><a href="#">My Account</a></li>
+		          <li><a href="#">Order History</a></li>
+		          <li><a href="#">Wish List</a></li>
+		          <li><a href="#">Newsletter</a></li>
+		        </ul>
+		      </div>
+		      <!-- Contact Details Start-->
+		      
+		      <!-- Contact Details End-->
+		      <div class="clear"></div>
+		      <div id="powered">
+		        <!-- Payment Images Icon Start-->
+		        <div class="payments_types part3"> <img src="images/payment_paypal.png" alt="paypal" title="PayPal"> <img src="images/payment_american.png" alt="american-express" title="American Express"> <img src="images/payment_2checkout.png" alt="2checkout" title="2checkout"> <img src="images/payment_maestro.png" alt="maestro" title="Maestro"> <img src="images/payment_discover.png" alt="discover" title="Discover"> </div>
+		        <!-- Payment Images Icon End-->
+		        <!-- Powered by Text Start-->
+		        <div class="powered_text part3">
+		          <p>eBay @ 2014<br />
+		        </div>
+		        <!-- Powered by Text End-->
+		        <!-- Follow Social Icons Start-->
+		        <div class="social part3"> <a href="http://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook" title="Facebook"></a> <a href="https://twitter.com/#!/harnishdesign" target="_blank"><img src="images/twitter.png" alt="Twitter" title="Twitter"> </a> <a href="#" target="_blank"> <img src="images/googleplus.png" alt="Google+" title="Google+"> </a> <a href="#" target="_blank"> <img src="images/pinterest.png" alt="Pinterest" title="Pinterest"> </a> <a href="#" target="_blank"> <img src="images/rss.png" alt="RSS" title="RSS"> </a> <a href="http://www.vimeo.com/#" target="_blank"> <img src="images/vimeo.png" alt="Vimeo" title="Vimeo"> </a> </div>
+		        <!-- Follow Social Icons End-->
+		        <div class="clear"></div>
+		      </div>
+		      <!-- Back to Top Button Start-->
+		      <div class="back-to-top" id="back-top"><a title="Back to Top" href="javascript:void(0)" class="backtotop">Top</a></div>
+		      <!-- Back to Top Button End-->
+		    </div>
+		  </footer>
+		  <!--Footer Part End-->
+		</div>
+	</body>
+</html>

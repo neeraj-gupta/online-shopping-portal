@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title><%= title %></title>
+		<link href="images/favicon.png" rel="icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="clean modern website">
+		<meta name="author" content="">
+		<!-- CSS Part Start-->
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/flexslider.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="js/colorbox/colorbox.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/carousel.css" media="screen" />
+		<!-- CSS Part End-->
+		<!-- JS Part Start-->
+		<script type="text/javascript" src="javascript/eBayClient.js"></script>
+		<script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="javascript/jquery.flexslider.js"></script>
+		<script type="text/javascript" src="javascript/jquery.easing-1.3.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.jcarousel.min.js"></script>
+		<script type="text/javascript" src="javascript/colorbox/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="javascript/tabs.js"></script>
+		<script type="text/javascript" src="javascript/cloud_zoom.js"></script>
+		<script type="text/javascript" src="javascript/jquery.dcjqaccordion.js"></script>
+		<script type="text/javascript" src="javascript/custom.js"></script>
+		<script type="text/javascript" src="javascript/html5.js"></script>
+		<!-- JS Part End-->
+		<!-- Google Fonts (Droid Sans) Start -->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans&amp;v1' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=&amp;v1' rel='stylesheet' type='text/css'>
+		<!-- Google Fonts (Droid Sans) End -->
+	</head>
+	<body>
+		<div class="wrapper-box">
+		  <div class="main-wrapper">
+		    <!--Header Part Start-->
+		    <header id="header">
+		      <div class="htop">
+		        <div id="language"> <span><%= userName %><b></b></span>
+		          <ul>
+		            <li><a title="logout" href="logout">Sign Out</a></li>
+		          </ul>
+		        </div>
+		      </div>
+		      
+		      <section class="hsecond">
+		        <div id="logo"><a href="#"><img src="images/ebayLogo.png" title="eBay" alt="eBay" /></a></div>
+		        
+		        <div class="clear"></div>
+		      </section>
+		      
+		      <!--Top Menu(Horizontal Categories) Start-->
+		      <nav id="menu">
+		        <ul>
+		          <li> <a href="adminPersons?currentpage=1">Persons</a>
+		
+		          </li>
+		          <li><a href="adminProducts?currentpage=1">Products</a>
+		
+		          </li>
+		          <li><a href="adminBuyers">Buyers</a>
+		
+		          </li>
+		          <li><a href="adminSellers?currentpage=1">Sellers</a>
+		
+		          </li>
+		          <li><a href="adminAuctions?currentpage=1">Auctions</a>
+		
+		          </li>
+		          <li><a href="adminSearchPerson">Search Person</a>
+		
+		          </li>
+		        </ul>
+		      </nav>
+		      <!--Top Menu(Horizontal Categories) End-->
+		    </header>
+		    <!--Header Part End-->
+		    <div id="container">
+		      <div id="content">
+		        <!-- Top Product Start-->
+		        <section class="box">
+		          <div class="box-heading">Buyers</div>		          
+		            <div class="product-grid">
+		            	<% if(!result.length==0 && error==""){%>
+		        			<% result.forEach(function(resp){ %>
+		            		 	<div>
+								    <div class="image"><a href=""><img src="images/profile.ico" title="Apple Cinema 30&quot;" alt="Apple Cinema 30&quot;" /></a></div>
+							    	<div class="name"><a href=""><%= resp.buyerfirstname%> <%= resp.buyerlastname%></a></div>
+							    	<div class="name"><%= resp.product_title %></div>
+							    	<div class="price"> <span class="price-new"><%= resp.buying_time %></span> <br />
+							        </div>
+							    	<div class="cart">
+							      		<a href="delete?id=<%=resp.buyerid%>&tableName=buyer">
+							    			<input type="button" value="Delete" class="button"/>
+							      		</a>
+							    	</div>
+							  	</div>
+		            		<% }) %>
+		        		<% } else {%>
+		        		<div>
+		        			<div class="name">
+		        				<%=error%>
+		        			</div>
+		        		</div>
+		        		<% } %>
+		            </div>
+		            <!--Product Grid End-->
+		        	
+		          </div>
+		        </section>
+		        <script type="text/javascript">
+					(function() {
+					  // store the slider in a local variable
+					  var $window = $(window),
+					      flexslider;
+					 
+					  // tiny helper function to add breakpoints
+					  function getGridSize() {
+					    return (window.innerWidth < 320) ? 1 :
+							   (window.innerWidth < 600) ? 2 :
+							   (window.innerWidth < 800) ? 3 :
+					           (window.innerWidth < 900) ? 4 : 5;
+					  }
+					  $window.load(function() {
+					    $('#content .featured_carousel').flexslider({
+					      animation: "slide",
+					      animationLoop: false,
+						  slideshow: false,
+					      itemWidth: 110,
+					      minItems: getGridSize(), // use function to pull in initial value
+					      maxItems: getGridSize() // use function to pull in initial value
+					    });
+					  });
+					}());
+				</script>
+				<!-- Top Product End-->
+		      </div>
+		      <div class="clear"></div>
+		    </div>
+		  </div>
+		  <!--Footer Part Start-->
+		  <footer id="footer">
+		    <div class="fpart-inner">
+		      <div class="column">
+		        <h3>Information</h3>
+		        <ul>
+		          <li><a href="">About Us</a></li>
+		          <li><a href="">Delivery Information</a></li>
+		          <li><a href="">Privacy Policy</a></li>
+		          <li><a href="">Elements</a></li>
+		        </ul>
+		      </div>
+		      <div class="column">
+		        <h3>Customer Service</h3>
+		        <ul>
+		          <li><a href="">Contact Us</a></li>
+		          <li><a href="#">Returns</a></li>
+		          <li><a href="">Site Map</a></li>
+		        </ul>
+		      </div>
+		      <div class="column">
+		        <h3>Extras</h3>
+		        <ul>
+		          <li><a href="#">Brands</a></li>
+		          <li><a href="#">Gift Vouchers</a></li>
+		          <li><a href="#">Affiliates</a></li>
+		          <li><a href="#">Specials</a></li>
+		        </ul>
+		      </div>
+		      <div class="column">
+		        <h3>My Account</h3>
+		        <ul>
+		          <li><a href="#">My Account</a></li>
+		          <li><a href="#">Order History</a></li>
+		          <li><a href="#">Wish List</a></li>
+		          <li><a href="#">Newsletter</a></li>
+		        </ul>
+		      </div>
+		      <!-- Contact Details Start-->
+		      
+		      <!-- Contact Details End-->
+		      <div class="clear"></div>
+		      <div id="powered">
+		        <!-- Payment Images Icon Start-->
+		        <div class="payments_types part3"> <img src="images/payment_paypal.png" alt="paypal" title="PayPal"> <img src="images/payment_american.png" alt="american-express" title="American Express"> <img src="images/payment_2checkout.png" alt="2checkout" title="2checkout"> <img src="images/payment_maestro.png" alt="maestro" title="Maestro"> <img src="images/payment_discover.png" alt="discover" title="Discover"> </div>
+		        <!-- Payment Images Icon End-->
+		        <!-- Powered by Text Start-->
+		        <div class="powered_text part3">
+		          <p>eBay @ 2014<br />
+		        </div>
+		        <!-- Powered by Text End-->
+		        <!-- Follow Social Icons Start-->
+		        <div class="social part3"> <a href="http://facebook.com" target="_blank"><img src="images/facebook.png" alt="Facebook" title="Facebook"></a> <a href="https://twitter.com/#!/harnishdesign" target="_blank"><img src="images/twitter.png" alt="Twitter" title="Twitter"> </a> <a href="#" target="_blank"> <img src="images/googleplus.png" alt="Google+" title="Google+"> </a> <a href="#" target="_blank"> <img src="images/pinterest.png" alt="Pinterest" title="Pinterest"> </a> <a href="#" target="_blank"> <img src="images/rss.png" alt="RSS" title="RSS"> </a> <a href="http://www.vimeo.com/#" target="_blank"> <img src="images/vimeo.png" alt="Vimeo" title="Vimeo"> </a> </div>
+		        <!-- Follow Social Icons End-->
+		        <div class="clear"></div>
+		      </div>
+		      <!-- Back to Top Button Start-->
+		      <div class="back-to-top" id="back-top"><a title="Back to Top" href="javascript:void(0)" class="backtotop">Top</a></div>
+		      <!-- Back to Top Button End-->
+		    </div>
+		  </footer>
+		  <!--Footer Part End-->
+		</div>
+	</body>
+</html>

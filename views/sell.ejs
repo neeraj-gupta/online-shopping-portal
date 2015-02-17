@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title><%= title %></title>
+		<link href="images/favicon.png" rel="icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="clean modern and elegant corporate look eCommerce html template">
+		<meta name="author" content="">
+		<!-- CSS Part Start-->
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/slideshow.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/flexslider.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="javascript/colorbox/colorbox.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/carousel.css" media="screen" />
+		<!-- CSS Part End-->
+		
+		<!-- JS Part Start-->
+		<script type="text/javascript" src="javascript/eBayClient.js"></script>
+		<script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.nivo.slider.pack.js"></script>
+		<script type="text/javascript" src="javascript/jquery.flexslider.js"></script>
+		<script type="text/javascript" src="javascript/jquery.easing-1.3.min.js"></script>
+		<script type="text/javascript" src="javascript/jquery.jcarousel.min.js"></script>
+		<script type="text/javascript" src="javascript/colorbox/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="javascript/tabs.js"></script>
+		<script type="text/javascript" src="javascript/cloud_zoom.js"></script>
+		<script type="text/javascript" src="javascript/jquery.dcjqaccordion.js"></script>
+		<script type="text/javascript" src="javascript/custom.js"></script>
+		<script type="text/javascript" src="javascript/html5.js"></script>
+		<script type="text/javascript">
+
+			function checkdate(input){
+				var validformat=/^\d{4}\/\d{2}\/\d{2}$/;
+				var returnval=false
+				if (!validformat.test(input.value))
+				alert("Invalid Date Format. Please correct and submit again.")
+				else{ //Detailed check for valid date ranges
+				var monthfield=input.value.split("/")[0]
+				var dayfield=input.value.split("/")[1]
+				var yearfield=input.value.split("/")[2]
+				var dayobj = new Date(yearfield, monthfield-1, dayfield)
+				if ((dayobj.getMonth()+1!=monthfield)||(dayobj.getDate()!=dayfield)||(dayobj.getFullYear()!=yearfield))
+				//alert("Invalid Day, Month, or Year range detected. Please correct and submit again.")
+					else
+				returnval=true
+			}
+			
+			if (returnval == false) input.select()
+				return returnval
+			}
+			
+			function dateValidation()
+			{
+				//alert('hi');
+				var z = document.getElementById("sdate");
+				var z1 = z.value;
+				var y = document.getElementById("edate");
+				var y1 = y.value;
+				//alert(z1);
+				//alert(y1);
+				if(z1>y1)
+				{
+					//alert('Start Date after End Date!');
+				}
+			}
+			
+		</script>
+		<!-- JS Part End-->
+		<!-- Google Fonts (Droid Sans) Start -->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans&amp;v1' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=&amp;v1' rel='stylesheet' type='text/css'>
+		<!-- Google Fonts (Droid Sans) End -->
+	</head>
+	<body>
+		<div class="wrapper-box">
+		  <div class="main-wrapper">
+		    <!--Header Part Start-->
+		    <header id="header">
+		      <div class="htop">
+		        <div class="links"> <a href="home">Homepage</a> <a href="logout">Logout</a> </div>
+		      </div>
+		      <section class="hsecond">
+		        <div id="logo"><a href="home"><img src="images/ebayLogo.png" title="eBay" alt="eBay" /></a></div>
+		        <div class="clear"></div>
+		      </section>
+		    </header>
+		    <!--Header Part End-->
+
+		    <div id="container">
+		    
+		   	<!--Left Part-->
+		      <div id="column-left">
+		        <!--Account Links Start-->
+		        <div class="box">
+		          
+		        </div>
+		        <!--Account Links End-->
+		      </div>
+		      <!--Left End-->
+		    
+		    
+		      <!--Middle Part Start-->
+		      <div id="content">
+		        <h1>What are you selling</h1>
+		       
+		        <form enctype="multipart/form-data" method="post" action="/sell">
+		          <h2>Describe Your Item</h2>
+		          <div class="content">
+		            <table class="form">
+		              <tbody>
+		              <!-- Product Title, Category, Sub Category, Condition, Qty and Desc -->
+		                <tr>
+		                  <td><span class="required">*</span> Product Title:</td>
+		                  <td><input class="large-field" type="text" value="" name="producttitle" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Condition:</td>
+		                  <td>
+		                  	<select name="condition">
+								<option value="new">New</option>
+								<option value="newother">New Other (See Detail)*</option>
+								<option value="newother">New with tags</option>
+								<option value="newother">New without tags</option>
+								<option value="man">Manufacturer Refurbished</option>
+								<option value="seller">Seller Refurbished</option>
+								<option value="used">Used</option>
+								<option value="preowned">Pre-Owned</option>
+								<option value="likenew">Like New</option>
+								<option value="forparts">For Parts or Not Working</option>
+							</select>
+		                  </td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Category:</td>
+		                  <td>
+		                  	<select name="category">
+								<option value="accessories">Accessories</option>
+								<option value="apparel">Apparel</option>
+								<option value="books">Books</option>
+								<option value="electronics">Electronics</option>
+								<option value="furniture">Furniture</option>
+								<option value="kitchen">Kitchen</option>
+								<option value="watches">Watches</option>
+							</select>
+		                  </td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Sub Category:</td>
+		                  <td><input class="large-field" type="text" value="" name="subcategory" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required">*</span> Description:</td>
+		                  <td><textarea rows="4" cols="50" placeholder="Enter a detailed description of the product you are selling." name="description"></textarea></td>
+		                </tr>
+		              </tbody>
+		            </table>
+		            <p>
+							** New other (see details): A new, unused item with absolutely no signs of wear. The item may be missing the original packaging, or in the original packaging but not sealed. The item may be a factory second or a new, unused item with defects. See the seller’s listing for full details and description of any imperfections.
+		          </div>
+
+		          <!-- Fixed, auction, price etc-->
+		          <h2>Select Format and Price</h2>
+		          <div class="content">
+		            <table class="form">
+		              <tbody>
+		                <tr>
+		                  <td><span class="required">*</span> List as :</td>
+		                  <td>
+		                  	<select name="listing_type" id="selltype">
+		                  		<option value="auction" selected>Auction</option>
+								<option value="FixedPrice">Fixed Price</option>
+							</select>
+		                  </td>
+		                </tr>
+		                <!--Hidden Quantity-->
+		                <tr id="qtyr">
+		                  <td><span class="required" id="qty1">*</span> Quantity:</td>
+		                  <td><input class="large-field" id="qty2" type="text" value="" name="quantity" required></td>
+		                </tr>
+		                <tr>
+		                  <td><span class="required" id="state-required">*</span> Price:</td>
+		                <td><input type="text" class="large-field" name="sellingprice" required>
+		                </tr>
+		                <tr>
+		                  <td><span class="required" id="postcode-required">*</span> Start Date(yyyy-mm-dd):</td>
+		                  <td><input type="date" value="yyyy-mm-dd" class="required" id="sdate" name="startingdate" required>
+		               </tr>
+		                <tr>
+		                  <td><span class="required" id="state-required">*</span> End Date(yyyy-mm-dd):</td>
+		                <td><input type="date" value="yyyy-mm-dd" class="required" id="edate" name="enddate" required onChange="dateValidation()">
+		                </tr>
+		                
+		              </tbody>
+		            </table>
+		          </div>
+		          
+		          <div class="buttons">
+		            <div class="left">
+		              <input type="submit" class="button" value="Continue">
+		            </div>
+		          </div>
+		        </form>
+		      </div>
+		      <!--Middle Part End-->
+		      <div class="clear"></div>
+		    </div>
+		  </div>
+		</div>
+	</body>
+</html>
